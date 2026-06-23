@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="مشويات الملوك مسمط - مشاوي شرقية أصيلة. نقدم أشهى المشاوي والأطباق الشرقية بجودة عالية في العبور." />
+  <meta name="theme-color" content="#B91C1C" />
+  <meta name="keywords" content="مشويات، مشاوي، العبور، مشويات الملوك" />
+  <link rel="canonical" href="https://molouk-masmot.com" />
+  <title>مشويات الملوك مسمط | أصيل الطعم</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Schema Markup for Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "مشويات الملوك مسمط",
+    "image": "https://molouk-masmot.com/logo.jpg",
+    "description": "مشويات الملوك مسمط - مشاوي شرقية أصيلة ومطبوخة على الفحم. جودة، نكهة، وخدمة ممتازة في العبور.",
+    "telephone": "+201010118590",
+    "url": "https://molouk-masmot.com",
+    "priceRange": "EGP",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "الشباب سنتر الياسمين مبنى أ",
+      "addressLocality": "العبور",
+      "addressRegion": "القاهرة",
+      "addressCountry": "EG"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "14:00",
+        "closes": "02:00"
+      }
+    ],
+    "sameAs": ["https://instagram.com/molouk_masmot","https://www.facebook.com/search/top?q=%D9%85%D8%B4%D9%88%D9%8A%D8%A7%D8%AA%20%D9%88%D9%85%D8%B3%D9%85%D8%B7%20%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%83"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+201010118590",
+      "contactType": "Customer Service"
+    }
+  }
+  </script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red:     '#B91C1C',
+              'red-light': '#EF4444',
+              'red-glow': '#7F1D1D',
+              gold:    '#D4A853',
+              dark:    '#0A0A0A',
+              card:    '#111111',
+              border:  '#1F1F1F',
+            }
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            body:    ['"Cairo"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #0A0A0A;
+      color: #E5E5E5;
+      font-family: 'Cairo', sans-serif;
+      line-height: 1.7;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #0A0A0A; }
+    ::-webkit-scrollbar-thumb { background: #B91C1C; border-radius: 4px; }
+
+    /* ── Red accent bar on brand name ── */
+    .brand-bar::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 100%;
+      background: #B91C1C;
+      border-radius: 2px;
+      margin-left: 12px;
+      vertical-align: middle;
+      box-shadow: 0 0 12px #B91C1C;
+    }
+
+    /* ── Glow border on menu cards ── */
+    .menu-card {
+      border: 1px solid #1F1F1F;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .menu-card:hover {
+      border-color: #B91C1C;
+      box-shadow: 0 0 20px rgba(185, 28, 28, 0.25);
+    }
+
+    /* ── Section divider ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 2.5rem;
+    }
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to left, transparent, #B91C1C);
+    }
+    .divider-line.reverse {
+      background: linear-gradient(to right, transparent, #B91C1C);
+    }
+    .divider-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #B91C1C;
+      box-shadow: 0 0 8px #B91C1C;
+    }
+
+    /* ── Nav link underline ── */
+    .nav-link {
+      position: relative;
+      padding-bottom: 3px;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 0; height: 2px;
+      background: #EF4444;
+      transition: width 0.25s;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* ── Hero separator ── */
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid #B91C1C;
+      color: #EF4444;
+      letter-spacing: 0.15em;
+      padding: 4px 16px;
+      font-size: 0.75rem;
+    }
+
+    /* ── Badge pill ── */
+    .badge {
+      display: inline-block;
+      background: rgba(185, 28, 28, 0.15);
+      border: 1px solid #B91C1C;
+      color: #EF4444;
+      border-radius: 999px;
+      padding: 2px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: #111111;
+      border: 1px solid #1F1F1F;
+      border-top: 3px solid #B91C1C;
+    }
+
+    /* ── Price tag ── */
+    .price-tag {
+      color: #D4A853;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    /* ── Map embed ── */
+    .map-wrapper {
+      border: 2px solid #1F1F1F;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(185, 28, 28, 0.1);
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid #1F1F1F;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="fixed top-0 right-0 left-0 z-50 bg-brand-dark border-b border-brand-border">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#home" class="brand-bar flex items-center gap-2">
+      <span class="font-display text-2xl font-bold text-white tracking-tight">مشويات الملوك مسمط</span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-300">
+      <li><a href="#home"    class="nav-link hover:text-white">الرئيسية</a></li>
+      <li><a href="#menu"    class="nav-link hover:text-white">المنيو</a></li>
+      <li><a href="#contact" class="nav-link hover:text-white">التواصل</a></li>
+      <li><a href="#location" class="nav-link hover:text-white">الموقع</a></li>
+    </ul>
+
+    <a href="tel:+201010118590"
+       class="hidden md:inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-light text-white text-sm font-bold px-5 py-2 rounded transition-colors">
+      اتصل بالمحل
+    </a>
+
+    <input type="checkbox" id="menu-toggle" class="hidden" />
+    <label for="menu-toggle" class="md:hidden flex flex-col gap-1.5 cursor-pointer">
+      <span class="w-6 h-0.5 bg-white block"></span>
+      <span class="w-6 h-0.5 bg-white block"></span>
+      <span class="w-6 h-0.5 bg-white block"></span>
+    </label>
+  </nav>
+
+  <div id="mobile-nav" class="md:hidden hidden px-6 pb-6 bg-brand-dark border-t border-brand-border">
+    <ul class="flex flex-col gap-4 pt-4 text-sm font-semibold text-gray-300">
+      <li><a href="#home"     onclick="document.getElementById('menu-toggle').checked=false" class="block hover:text-white">الرئيسية</a></li>
+      <li><a href="#menu"     onclick="document.getElementById('menu-toggle').checked=false" class="block hover:text-white">المنيو</a></li>
+      <li><a href="#contact"  onclick="document.getElementById('menu-toggle').checked=false" class="block hover:text-white">التواصل</a></li>
+      <li><a href="#location" onclick="document.getElementById('menu-toggle').checked=false" class="block hover:text-white">الموقع</a></li>
+      <li><a href="tel:+201010118590" class="block bg-brand-red text-white text-center py-2 rounded font-bold">اتصل بالمحل</a></li>
+    </ul>
+  </div>
+</header>
+
+<style>
+  #menu-toggle:checked ~ * #mobile-nav,
+  #menu-toggle:checked + * + #mobile-nav { display: block; }
+</style>
+<script>
+  document.getElementById('menu-toggle').addEventListener('change', function(){
+    document.getElementById('mobile-nav').classList.toggle('hidden', !this.checked);
+  });
+</script>
+
+<!-- HERO -->
+<section id="home" class="pt-16 min-h-screen flex items-center relative overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none select-none">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 60% at 60% 50%, rgba(127,29,29,0.18) 0%, transparent 70%);"></div>
+    <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 60px 60px;"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 py-24 relative z-10">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Left / Text -->
+      <div>
+        <h1 class="font-display text-5xl md:text-7xl font-black text-white leading-tight mb-6">
+          أصيل الطعم<br />
+          <span class="text-brand-red">مشويات الملوك مسمط</span>
+        </h1>
+
+        <p class="text-gray-400 text-base md:text-lg mb-10 max-w-md leading-relaxed">
+          مشويات الملوك مسمط — خبرة في تحضير المشاوي الشرقية على الفحم، نركز على الجودة والنكهة المميزة.
+          زورنا في العبور لتجربة طعام مميزة.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#menu"
+             class="bg-brand-red hover:bg-brand-red-light text-white font-bold px-8 py-3 rounded transition-colors">
+            استعرض المنيو
+          </a>
+          <a href="#contact"
+             class="border border-brand-border hover:border-brand-red text-gray-300 hover:text-white font-bold px-8 py-3 rounded transition-colors">
+            تواصل معنا
+          </a>
+        </div>
+      </div>
+
+      <!-- Right / Stats -->
+      <div class="grid grid-cols-2 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-7 col-span-2">
+          <p class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-1">ساعات العمل</p>
+          <p class="text-white font-bold text-xl">كل يوم · من ٢ ظهراً — ٢ صباحاً</p>
+        </div>
+        <div class="menu-card bg-brand-card rounded-xl p-7 text-center">
+          <p class="text-brand-red font-display text-4xl font-black">٥٠+</p>
+          <p class="text-gray-400 text-sm mt-1">صنف في المنيو</p>
+        </div>
+        <div class="menu-card bg-brand-card rounded-xl p-7 text-center">
+          <p class="text-brand-red font-display text-3xl font-black">فريق الطهاة</p>
+          <p class="text-gray-400 text-sm mt-1">خبرة طويلة في تحضير المشاوي على الفحم</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="py-24 bg-[#0D0D0D]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="badge mb-4">قائمة الطعام</span>
+      <h2 class="font-display text-4xl md:text-5xl font-black text-white mb-3">المنيو</h2>
+      <p class="text-gray-500 max-w-md mx-auto text-sm">اختر من بين أقسامنا المتنوعة: ركن الساندوتشات، المشكل، ركن الفتة، المشويات، الوجبات، الحواوشي، الطواجن، الإضافات والمشروبات.</p>
+    </div>
+
+    <!-- ركن السندوتشات (كما بالصورة 2 - يمين) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">ركن السندوتشات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش مشكل</h4>
+          <p class="text-gray-400 text-sm mt-1">وسط — ٣٥ · كبير — ٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش مِمبار</h4>
+          <p class="text-gray-400 text-sm mt-1">وسط — ٣٥ · كبير — ٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش كفتة بلدي</h4>
+          <p class="text-gray-400 text-sm mt-1">وسط — ٣٥ · كبير — ٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش سجق بلدي</h4>
+          <p class="text-gray-400 text-sm mt-1">وسط — ٣٥ · كبير — ٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش كبدة بلدي</h4>
+          <p class="text-gray-400 text-sm mt-1">وسط — ٣٥ · كبير — ٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش مشكل الملوك</h4>
+          <p class="text-gray-400 text-sm mt-1">١٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش لحمة راس ولسان</h4>
+          <p class="text-gray-400 text-sm mt-1">١٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش كفتة بالفحم</h4>
+          <p class="text-gray-400 text-sm mt-1">٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش طرب</h4>
+          <p class="text-gray-400 text-sm mt-1">٧٠</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- المشكل (طبق — صورة 2 وسط، الأسعار كيلو / ١/٢ / ١/٤) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">المشكل</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق ممبار</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٣٥٠ · ١/٢ — ١٨٠ · ١/٤ — ١٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق كفتة داوود باشا</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٤٥٠ · ١/٢ — ٢٣٠ · ١/٤ — ١٢٥</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق سجق بلدي</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٤٥٠ · ١/٢ — ٢٣٠ · ١/٤ — ١٢٥</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق سجق بلدي (طلب بالسجق)</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٤٥٠ · ١/٢ — ٢٣٠ · ١/٤ — ١٢٥</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق كبدة</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٤٥٠ · ١/٢ — ٢٣٠ · ١/٤ — ١٢٥</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق مشكل الملوك</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٦٠٠ · ١/٢ — ٣٠٠ · ١/٤ — ١٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق لحمة راس</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٦٠٠ · ١/٢ — ٣٥٠ · ١/٤ — ١٧٥</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق كبدة باللية</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٥٠٠ · ١/٢ — ٢٥٠ · ١/٤ — ١٢٥</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ركن الفتة (كما بالصورة 2 أسفل اليمين) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">ركن الفتة</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">فتة سادة</h4>
+          <p class="text-gray-400 text-sm mt-1">٤٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">فتة باللحمة</h4>
+          <p class="text-gray-400 text-sm mt-1">٢٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">فتة كوارع</h4>
+          <p class="text-gray-400 text-sm mt-1">كبير — ٢٠٠ · وسط — ١٥٠</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- المشويات (كما بالصورة 1 أعلى يمين) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">المشويات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">فراخ مشوية</h4>
+          <p class="text-gray-400 text-sm mt-1">٩٠ · ١٨٠ · ٣٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">كفتة كندوز</h4>
+          <p class="text-gray-400 text-sm mt-1">١٢٥ · ٢٥٠ · ٤٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طرب</h4>
+          <p class="text-gray-400 text-sm mt-1">١٥٠ · ٣٠٠ · ٦٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سيخ مشوي</h4>
+          <p class="text-gray-400 text-sm mt-1">١٢٥ · ٢٥٠ · ٤٥٠</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الوجبات (كما بالصورة 1 عمود اليمين) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">الوجبات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة ربع فرخة وراك</h4>
+          <p class="text-gray-400 text-sm mt-1">١٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة ربع فرخة صدر</h4>
+          <p class="text-gray-400 text-sm mt-1">١١٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة نصف فرخة</h4>
+          <p class="text-gray-400 text-sm mt-1">٢٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة كفتة</h4>
+          <p class="text-gray-400 text-sm mt-1">٨٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة ميكس</h4>
+          <p class="text-gray-400 text-sm mt-1">١٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة الملوك</h4>
+          <p class="text-gray-400 text-sm mt-1">٣٨٠</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الحواوشي (كما بالصورة 1) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">الحواوشي</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">حواوشي</h4>
+          <p class="text-gray-400 text-sm mt-1">٥٠ · ٧٠ · ١٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">حواوشي موزاريلا</h4>
+          <p class="text-gray-400 text-sm mt-1">٨٠ · ١٢٠</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الطواجن والشوربات (كما بالصورة 1 وسط) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">الطواجن / الشوربات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">شوربة كوارع محلية</h4>
+          <p class="text-gray-400 text-sm mt-1">١٢٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طاجن كوارع صلصة</h4>
+          <p class="text-gray-400 text-sm mt-1">١٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طاجن لحمة بالبصل + أرز</h4>
+          <p class="text-gray-400 text-sm mt-1">١٧٠</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الإضافات (كما بالصورة 1 يسار) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">الإضافات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">شوربة كوارع سادة</h4><p class="text-gray-400 mt-1">٢٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">شوربة لحمة سادة</h4><p class="text-gray-400 mt-1">١٥</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">شوربة لسان عصفور</h4><p class="text-gray-400 mt-1">١٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">أرز سمتي</h4><p class="text-gray-400 mt-1">٤٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">أرز بالشعرية</h4><p class="text-gray-400 mt-1">٣٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">ملوخية</h4><p class="text-gray-400 mt-1">٢٥</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">خضار</h4><p class="text-gray-400 mt-1">٢٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">طحينة</h4><p class="text-gray-400 mt-1">١٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">سلطة</h4><p class="text-gray-400 mt-1">١٠</p></div>
+      </div>
+    </div>
+
+    <!-- المشروبات (كما بالصورة 1 أسفل يسار) -->
+    <div class="mb-8">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">مشروبات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- الصورة لم تذكر أسعار المشروبات بالتفصيل؛ أظهرت مشروبات فقط -->
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">سيرو سباتس</h4></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">كولا</h4></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">ماء</h4></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 bg-brand-dark">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="badge mb-4">تواصل معنا</span>
+      <h2 class="font-display text-4xl md:text-5xl font-black text-white mb-3">نحن هنا لك</h2>
+      <p class="text-gray-500 max-w-md mx-auto text-sm">للحجوزات أو الاستفسارات تواصل معنا عبر الأرقام أو صفحة الفيسبوك.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+
+      <div class="contact-card rounded-xl p-7">
+        <div class="w-12 h-12 rounded-full bg-brand-red-glow flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-red-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 7V5z"/>
+          </svg>
+        </div>
+        <p class="text-gray-400 text-xs font-semibold uppercase tracking-widest mb-2">أرقام التواصل</p>
+        <ul class="text-white font-bold text-lg space-y-1">
+          <li><a href="tel:+201010118590" class="hover:text-brand-red-light">01010118590</a></li>
+        </ul>
+        <p class="text-gray-600 text-xs mt-3">ساعات العمل: من ٢ ظهراً — ٢ صباحاً</p>
+      </div>
+
+      <div class="contact-card rounded-xl p-7">
+        <div class="w-12 h-12 rounded-full bg-brand-red-glow flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-red-light" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+          </svg>
+        </div>
+        <p class="text-gray-400 text-xs font-semibold uppercase tracking-widest mb-2">واتساب للحجز</p>
+        <a href="https://wa.me/201010118590" target="_blank" rel="noopener noreferrer" class="text-white font-bold text-lg hover:text-brand-red-light">01010118590</a>
+        <p class="text-gray-600 text-xs mt-2">ارسال رسالة للحجوزات والاستعلام</p>
+      </div>
+
+      <div class="contact-card rounded-xl p-7">
+        <div class="w-12 h-12 rounded-full bg-brand-red-glow flex items-center justify-center mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-red-light" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12a10 10 0 10-11.5 9.87v-6.99H8.12V12h2.36V9.8c0-2.33 1.39-3.62 3.52-3.62 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.46V12h2.59l-.41 2.88h-2.18v6.99A10 10 0 0022 12z"/>
+          </svg>
+        </div>
+        <p class="text-gray-400 text-xs font-semibold uppercase tracking-widest mb-2">تابعنا على فيسبوك</p>
+        <a href="https://www.facebook.com/search/top?q=%D9%85%D8%B4%D9%88%D9%8A%D8%A7%D8%AA%20%D9%88%D9%85%D8%B3%D9%85%D8%B7%20%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%83" target="_blank" rel="noopener noreferrer" class="text-white font-bold text-lg hover:text-brand-red-light">مشويات ومسمط الملوك</a>
+        <p class="text-gray-600 text-xs mt-2">العروض، الصور وتحديثات الفرع</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="py-24 bg-[#0D0D0D]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="badge mb-4">أين نحن؟</span>
+      <h2 class="font-display text-4xl md:text-5xl font-black text-white mb-3">الموقع</h2>
+      <p class="text-gray-500 max-w-md mx-auto text-sm">فرعنا الرئيسي في العبور — الشباب سنتر الياسمين مبنى أ. افتح الخريطة للموقع الدقيق.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 items-start">
+      <div class="space-y-5">
+        <div class="contact-card rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 shrink-0 rounded-lg bg-brand-red flex items-center justify-center mt-0.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="text-white font-bold mb-1">الفرع الرئيسي — العبور</p>
+              <p class="text-gray-500 text-sm">الشباب سنتر الياسمين مبنى أ، العبور، القاهرة</p>
+              <a href="https://maps.app.goo.gl/hjhFMU2TF4kDNhHH8?g_st=aw" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-brand-red-light text-xs hover:underline">فتح في الخريطة ←</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <div class="map-wrapper">
+          <iframe title="موقع مشويات الملوك مسمط — العبور" src="https://www.google.com/maps?q=الشباب+سنتر+الياسمين+مبنى+أ+العبور&output=embed" width="100%" height="380" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p class="text-gray-600 text-xs mt-3 text-center">الخريطة توضح موقع الشباب سنتر الياسمين — استخدم الرابط للاتجاهات الدقيقة: https://maps.app.goo.gl/hjhFMU2TF4kDNhHH8?g_st=aw</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="py-16 bg-brand-red">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="font-display text-3xl md:text-4xl font-black text-white mb-4">زورنا في الفرع</h2>
+    <p class="text-red-100 text-base mb-8">الاستلام من الفرع متاح · للحجوزات والاستعلامات تواصل عبر الأرقام أو الفيسبوك.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="tel:+201010118590" class="bg-white text-brand-red font-black px-8 py-3 rounded hover:bg-red-50 transition-colors">اتصل الآن</a>
+      <a href="https://wa.me/201010118590" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white font-black px-8 py-3 rounded hover:bg-white hover:text-brand-red transition-colors">واتساب</a>
+      <a href="https://www.facebook.com/search/top?q=%D9%85%D8%B4%D9%88%D9%8A%D8%A7%D8%AA%20%D9%88%D9%85%D8%B3%D9%85%D8%B7%20%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%83" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white font-black px-6 py-3 rounded hover:bg-white hover:text-brand-red transition-colors">فيسبوك</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-brand-dark pt-12 pb-6">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+      <div class="lg:col-span-2">
+        <div class="brand-bar flex items-center gap-2 mb-4">
+          <span class="font-display text-3xl font-black text-white">مشويات الملوك مسمط</span>
+        </div>
+        <p class="text-gray-500 text-sm leading-relaxed max-w-xs">مشويات الملوك مسمط — خبرة في تقديم أفضل المشاوي الشرقية والنكهات التقليدية. زورنا في العبور.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm tracking-wide">روابط سريعة</h4>
+        <ul class="space-y-2 text-gray-500 text-sm">
+          <li><a href="#home" class="hover:text-brand-red-light transition-colors">الرئيسية</a></li>
+          <li><a href="#menu" class="hover:text-brand-red-light transition-colors">المنيو</a></li>
+          <li><a href="#contact" class="hover:text-brand-red-light transition-colors">التواصل</a></li>
+          <li><a href="#location" class="hover:text-brand-red-light transition-colors">الموقع</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold mb-4 text-sm tracking-wide">الأرقام</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="tel:+201010118590" class="text-gray-500 hover:text-brand-red-light transition-colors">01010118590 (رئيسي)</a></li>
+          <li><a href="https://www.facebook.com/search/top?q=%D9%85%D8%B4%D9%88%D9%8A%D8%A7%D8%AA%20%D9%88%D9%85%D8%B3%D9%85%D8%B7%20%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%83" class="text-gray-500 hover:text-brand-red-light transition-colors">صفحة فيسبوك</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-brand-border pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-600 text-xs">
+      <p>© ٢٠٢٦ مشويات الملوك مسمط — جميع الحقوق محفوظة</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
