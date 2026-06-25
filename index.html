@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
+  <!-- Schema Markup for Local Business -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,7 +39,7 @@
         "closes": "02:00"
       }
     ],
-    "sameAs": ["https://instagram.com/molouk_masmot","https://www.facebook.com/share/1D5ByLAm5S/"],
+    "sameAs": ["https://instagram.com/molouk_masmot","https://www.facebook.com/search/top?q=%D9%85%D8%B4%D9%88%D9%8A%D8%A7%D8%AA%20%D9%88%D9%85%D8%B3%D9%85%D8%B7%20%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%83"],
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+201010118590",
@@ -82,12 +83,12 @@
       line-height: 1.7;
     }
 
-    /* scrollbar */
+    /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: #0A0A0A; }
     ::-webkit-scrollbar-thumb { background: #B91C1C; border-radius: 4px; }
 
-    /* brand bar */
+    /* ── Red accent bar on brand name ── */
     .brand-bar::before {
       content: '';
       display: inline-block;
@@ -100,7 +101,17 @@
       box-shadow: 0 0 12px #B91C1C;
     }
 
-    /* divider style (kept) */
+    /* ── Glow border on menu cards ── */
+    .menu-card {
+      border: 1px solid #1F1F1F;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .menu-card:hover {
+      border-color: #B91C1C;
+      box-shadow: 0 0 20px rgba(185, 28, 28, 0.25);
+    }
+
+    /* ── Section divider ── */
     .divider {
       display: flex;
       align-items: center;
@@ -122,64 +133,69 @@
       box-shadow: 0 0 8px #B91C1C;
     }
 
-    /* new menu list styling */
-    .menu-list { max-width: 820px; margin: 0 auto; }
-    .menu-item {
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.03);
-      display: block;
+    /* ── Nav link underline ── */
+    .nav-link {
+      position: relative;
+      padding-bottom: 3px;
     }
-    .menu-item:last-child { border-bottom: none; padding-bottom: 6px; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 0; height: 2px;
+      background: #EF4444;
+      transition: width 0.25s;
+    }
+    .nav-link:hover::after { width: 100%; }
 
-    /* name block */
-    .menu-item .name {
-      font-weight: 700;
-      color: #fff;
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
-
-    /* sizes above prices, each pair stacked vertically and centered */
-    .size-price-row {
-      display: flex;
-      gap: 18px;
-      justify-content: flex-end; /* RTL: keeps items to the right */
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-    .size-price {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 56px;
-    }
-    .size {
-      font-size: 0.75rem;
+    /* ── Hero separator ── */
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid #B91C1C;
       color: #EF4444;
+      letter-spacing: 0.15em;
+      padding: 4px 16px;
+      font-size: 0.75rem;
+    }
+
+    /* ── Badge pill ── */
+    .badge {
+      display: inline-block;
+      background: rgba(185, 28, 28, 0.15);
+      border: 1px solid #B91C1C;
+      color: #EF4444;
+      border-radius: 999px;
+      padding: 2px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: #111111;
+      border: 1px solid #1F1F1F;
+      border-top: 3px solid #B91C1C;
+    }
+
+    /* ── Price tag ── */
+    .price-tag {
+      color: #D4A853;
       font-weight: 700;
-      margin-bottom: 6px;
-      letter-spacing: 0.06em;
-    }
-    .price {
-      font-size: 0.95rem;
-      color: #D4A853;
-      font-weight: 800;
+      font-size: 1.05rem;
     }
 
-    /* single-price (no sizes) */
-    .single-price {
-      display: flex;
-      justify-content: flex-end;
-      color: #D4A853;
-      font-weight: 800;
-      font-size: 0.98rem;
-      margin-top: 6px;
+    /* ── Map embed ── */
+    .map-wrapper {
+      border: 2px solid #1F1F1F;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(185, 28, 28, 0.1);
     }
 
-    /* small note for header text */
-    .menu-note { color: #9CA3AF; }
-
-    footer { border-top: 1px solid #1F1F1F; }
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid #1F1F1F;
+    }
   </style>
 </head>
 
@@ -242,6 +258,8 @@
 
   <div class="max-w-6xl mx-auto px-6 py-24 relative z-10">
     <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Left / Text -->
       <div>
         <h1 class="font-display text-5xl md:text-7xl font-black text-white leading-tight mb-6">
           أصيل الطعم<br />
@@ -265,465 +283,345 @@
         </div>
       </div>
 
+      <!-- Right / Stats -->
       <div class="grid grid-cols-2 gap-5">
-        <div class="bg-brand-card rounded-xl p-7 col-span-2">
+        <div class="menu-card bg-brand-card rounded-xl p-7 col-span-2">
           <p class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-1">ساعات العمل</p>
           <p class="text-white font-bold text-xl">كل يوم من ٢ ظهراً — ٢ صباحاً</p>
         </div>
-        <div class="bg-brand-card rounded-xl p-7 text-center">
+        <div class="menu-card bg-brand-card rounded-xl p-7 text-center">
           <p class="text-brand-red font-display text-4xl font-black">٥٠+</p>
           <p class="text-gray-400 text-sm mt-1">صنف في المنيو</p>
         </div>
-        <div class="bg-brand-card rounded-xl p-7 text-center">
+        <div class="menu-card bg-brand-card rounded-xl p-7 text-center">
           <p class="text-brand-red font-display text-3xl font-black">فريق الطهاة</p>
           <p class="text-gray-400 text-sm mt-1">خبرة طويلة في تحضير المشاوي على الفحم</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- MENU (عمودي - أحجام فوق الأسعار تحت) -->
+<!-- MENU -->
 <section id="menu" class="py-24 bg-[#0D0D0D]">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-12">
+    <div class="text-center mb-16">
       <span class="badge mb-4">قائمة الطعام</span>
-      <h2 class="font-display text-4xl md:text-5xl font-black text-white mb-2">المنيو</h2>
-      <p class="menu-note text-sm">عرض المنيو بأسلوب ورقي: كل صنف سطر واحد، الأحجام مكتوبة فوق والأسعار تحت كل حجم.</p>
+      <h2 class="font-display text-4xl md:text-5xl font-black text-white mb-3">المنيو</h2>
+      <p class="text-gray-500 max-w-md mx-auto text-sm">اختر من بين أقسامنا المتنوعة: ركن الساندوتشات، المشكل، ركن الفتة، المشويات، الوجبات، الحواوشي، الطواجن، الإضافات والمشروبات.</p>
     </div>
 
-    <div class="menu-list">
-
-      <!-- ركن السندوتشات -->
-      <div class="mb-8">
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-dot"></div>
-          <h3 class="text-brand-red font-bold text-lg px-2">ركن السندوتشات</h3>
-          <div class="divider-dot"></div>
-          <div class="divider-line reverse"></div>
-        </div>
-
-        <!-- عنصر -->
-        <div class="menu-item">
-          <div class="name">سندوتش مشكل</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">وسط</span><span class="price">٣٥</span></div>
-            <div class="size-price"><span class="size">كبير</span><span class="price">٥٠</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سندوتش ممبار</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">وسط</span><span class="price">٣٥</span></div>
-            <div class="size-price"><span class="size">كبير</span><span class="price">٥٠</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سندوتش كفتة بلدي</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">وسط</span><span class="price">٣٥</span></div>
-            <div class="size-price"><span class="size">كبير</span><span class="price">٥٠</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سندوتش سجق بلدي</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">وسط</span><span class="price">٣٥</span></div>
-            <div class="size-price"><span class="size">كبير</span><span class="price">٥٠</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سندوتش كبدة بلدي</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">وسط</span><span class="price">٣٥</span></div>
-            <div class="size-price"><span class="size">كبير</span><span class="price">٥٠</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سندوتش فشة وطحال</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">وسط</span><span class="price">٥٠</span></div>
-            <div class="size-price"><span class="size">كبير</span><span class="price">٧٠</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سندوتش لحمة راس</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">وسط</span><span class="price">٨٠</span></div>
-            <div class="size-price"><span class="size">كبير</span><span class="price">١٠٠</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سندوتش مشكل الملوك</div>
-          <div class="single-price">١٠٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سندوتش لحمة راس ولسان</div>
-          <div class="single-price">١٠٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سندوتش كفتة عالفحم</div>
-          <div class="single-price">٥٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سندوتش طرب</div>
-          <div class="single-price">٧٠</div>
-        </div>
+    <!-- ركن السندوتشات (كما بالصورة 2 - يمين) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">ركن السندوتشات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
       </div>
 
-      <!-- المشكل -->
-      <div class="mb-8">
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-dot"></div>
-          <h3 class="text-brand-red font-bold text-lg px-2">المشكل</h3>
-          <div class="divider-dot"></div>
-          <div class="divider-line reverse"></div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش مشكل</h4>
+          <p class="text-gray-400 text-sm mt-1">وسط — ٣٥ · كبير — ٥٠</p>
         </div>
 
-        <div class="menu-item">
-          <div class="name">طلب مشكل</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">كيلو</span><span class="price">-</span></div>
-            <div class="size-price"><span class="size">١/٢</span><span class="price">١٢٥</span></div>
-            <div class="size-price"><span class="size">١/٤</span><span class="price">٨٠</span></div>
-          </div>
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش مِمبار</h4>
+          <p class="text-gray-400 text-sm mt-1">وسط — ٣٥ · كبير — ٥٠</p>
         </div>
 
-        <div class="menu-item">
-          <div class="name">طلب ممبار</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">كيلو</span><span class="price">٣٥٠</span></div>
-            <div class="size-price"><span class="size">١/٢</span><span class="price">١٨٠</span></div>
-            <div class="size-price"><span class="size">١/٤</span><span class="price">١٠٠</span></div>
-          </div>
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش كفتة بلدي</h4>
+          <p class="text-gray-400 text-sm mt-1">وسط — ٣٥ · كبير — ٥٠</p>
         </div>
 
-        <div class="menu-item">
-          <div class="name">طلب كفتة داوود باشا</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">كيلو</span><span class="price">٤٥٠</span></div>
-            <div class="size-price"><span class="size">١/٢</span><span class="price">٢٣٠</span></div>
-            <div class="size-price"><span class="size">١/٤</span><span class="price">١٢٥</span></div>
-          </div>
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش سجق بلدي</h4>
+          <p class="text-gray-400 text-sm mt-1">وسط — ٣٥ · كبير — ٥٠</p>
         </div>
 
-        <div class="menu-item">
-          <div class="name">طلب سجق بلدي</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">كيلو</span><span class="price">٤٥٠</span></div>
-            <div class="size-price"><span class="size">١/٢</span><span class="price">٢٣٠</span></div>
-            <div class="size-price"><span class="size">١/٤</span><span class="price">١٢٥</span></div>
-          </div>
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش كبدة بلدي</h4>
+          <p class="text-gray-400 text-sm mt-1">وسط — ٣٥ · كبير — ٥٠</p>
         </div>
 
-        <div class="menu-item">
-          <div class="name">طلب كبدة</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">كيلو</span><span class="price">٤٥٠</span></div>
-            <div class="size-price"><span class="size">١/٢</span><span class="price">٢٣٠</span></div>
-            <div class="size-price"><span class="size">١/٤</span><span class="price">١٢٥</span></div>
-          </div>
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش مشكل الملوك</h4>
+          <p class="text-gray-400 text-sm mt-1">١٠٠</p>
         </div>
 
-        <div class="menu-item">
-          <div class="name">طلب مشكل الملوك</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">كيلو</span><span class="price">٦٠٠</span></div>
-            <div class="size-price"><span class="size">١/٢</span><span class="price">٣٠٠</span></div>
-            <div class="size-price"><span class="size">١/٤</span><span class="price">١٥٠</span></div>
-          </div>
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش لحمة راس ولسان</h4>
+          <p class="text-gray-400 text-sm mt-1">١٠٠</p>
         </div>
 
-        <div class="menu-item">
-          <div class="name">طلب لحمة راس</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">كيلو</span><span class="price">٦٠٠</span></div>
-            <div class="size-price"><span class="size">١/٢</span><span class="price">٣٥٠</span></div>
-            <div class="size-price"><span class="size">١/٤</span><span class="price">١٧٥</span></div>
-          </div>
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش كفتة بالفحم</h4>
+          <p class="text-gray-400 text-sm mt-1">٥٠</p>
         </div>
 
-        <div class="menu-item">
-          <div class="name">طلب كبدة باللية</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">كيلو</span><span class="price">٥٠٠</span></div>
-            <div class="size-price"><span class="size">١/٢</span><span class="price">٢٥٠</span></div>
-            <div class="size-price"><span class="size">١/٤</span><span class="price">١٢٥</span></div>
-          </div>
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سندوتش طرب</h4>
+          <p class="text-gray-400 text-sm mt-1">٧٠</p>
         </div>
+
       </div>
-
-      <!-- ركن الفتة -->
-      <div class="mb-8">
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-dot"></div>
-          <h3 class="text-brand-red font-bold text-lg px-2">ركن الفتة</h3>
-          <div class="divider-dot"></div>
-          <div class="divider-line reverse"></div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">فتة سادة</div>
-          <div class="single-price">٤٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">فتة باللحمة</div>
-          <div class="single-price">٢٠٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">فتة كوارع</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">كبير</span><span class="price">٢٠٠</span></div>
-            <div class="size-price"><span class="size">وسط</span><span class="price">١٥٠</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- المشويات -->
-      <div class="mb-8">
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-dot"></div>
-          <h3 class="text-brand-red font-bold text-lg px-2">المشويات</h3>
-          <div class="divider-dot"></div>
-          <div class="divider-line reverse"></div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">فراخ مشوية</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size"></span><span class="price">٩٠</span></div>
-            <div class="size-price"><span class="size"></span><span class="price">١٨٠</span></div>
-            <div class="size-price"><span class="size"></span><span class="price">٣٥٠</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">كفتة كندوز</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size"></span><span class="price">١٢٥</span></div>
-            <div class="size-price"><span class="size"></span><span class="price">٢٥٠</span></div>
-            <div class="size-price"><span class="size"></span><span class="price">٤٥٠</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">طرب</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size"></span><span class="price">١٥٠</span></div>
-            <div class="size-price"><span class="size"></span><span class="price">٣٠٠</span></div>
-            <div class="size-price"><span class="size"></span><span class="price">٦٠٠</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سجق مشوي</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size"></span><span class="price">١٢٥</span></div>
-            <div class="size-price"><span class="size"></span><span class="price">٢٥٠</span></div>
-            <div class="size-price"><span class="size"></span><span class="price">٤٥٠</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- الوجبات -->
-      <div class="mb-8">
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-dot"></div>
-          <h3 class="text-brand-red font-bold text-lg px-2">الوجبات</h3>
-          <div class="divider-dot"></div>
-          <div class="divider-line reverse"></div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">وجبة ربع فرخة ورك</div>
-          <div class="single-price">١٢٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">وجبة ربع فرخة صدر</div>
-          <div class="single-price">١٢٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">وجبة ١\٢ فرخة</div>
-          <div class="single-price">٢٠٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">وجبة ١\٨ كفتة</div>
-          <div class="single-price">٨٠</div>
-        </div>
-
-         <div class="menu-item">
-          <div class="name">وجبة ١\٤ كفتة</div>
-          <div class="single-price">١٤٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">وجبة ميكس</div>
-          <div class="single-price">١٥٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">وجبة الملوك</div>
-          <div class="single-price">٣٨٠</div>
-        </div>
-      </div>
-
-      <!-- الحواوشي -->
-      <div class="mb-8">
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-dot"></div>
-          <h3 class="text-brand-red font-bold text-lg px-2">الحواوشي</h3>
-          <div class="divider-dot"></div>
-          <div class="divider-line reverse"></div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">حواوشي</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">صغير</span><span class="price">٥٠</span></div>
-            <div class="size-price"><span class="size">وسط</span><span class="price">٧٠</span></div>
-            <div class="size-price"><span class="size">كبير</span><span class="price">١٠٠</span></div>
-          </div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">حواوشي موزاريلا</div>
-          <div class="size-price-row">
-            <div class="size-price"><span class="size">وسط</span><span class="price">٨٠</span></div>
-            <div class="size-price"><span class="size">كبير</span><span class="price">١٢٠</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!--الطواجن -->
-      <div class="mb-8">
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-dot"></div>
-          <h3 class="text-brand-red font-bold text-lg px-2">الطواجن</h3>
-          <div class="divider-dot"></div>
-          <div class="divider-line reverse"></div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">شوربة كوارع مخلية</div>
-          <div class="single-price">١٢٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">طاجن كوارع صلصة</div>
-          <div class="single-price">١٥٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">طاجن لحمة بالبصل + أرز</div>
-          <div class="single-price">١٧٠</div>
-        </div>
-      </div>
-
-      <!-- الإضافات -->
-      <div class="mb-8">
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-dot"></div>
-          <h3 class="text-brand-red font-bold text-lg px-2">الإضافات</h3>
-          <div class="divider-dot"></div>
-          <div class="divider-line reverse"></div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">شوربة كوارع سادة</div>
-          <div class="single-price">٢٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">شوربة لحمة سادة</div>
-          <div class="single-price">١٥</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">شوربة لسان عصفور</div>
-          <div class="single-price">١٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">أرز سمتي</div>
-          <div class="single-price">٤٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">أرز بالشعرية</div>
-          <div class="single-price">٣٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">ملوخية</div>
-          <div class="single-price">٢٥</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">خضار</div>
-          <div class="single-price">٢٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">طحينة</div>
-          <div class="single-price">١٠</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سلطة</div>
-          <div class="single-price">١٠</div>
-        </div>
-      </div>
-
-      <!-- المشروبات -->
-      <div class="mb-6">
-        <div class="divider">
-          <div class="divider-line"></div>
-          <div class="divider-dot"></div>
-          <h3 class="text-brand-red font-bold text-lg px-2">مشروبات</h3>
-          <div class="divider-dot"></div>
-          <div class="divider-line reverse"></div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">سيرو سباتس</div>
-          <div class="single-price">—</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">كولا</div>
-          <div class="single-price">—</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="name">ماء</div>
-          <div class="single-price">—</div>
-        </div>
-      </div>
-
     </div>
+
+    <!-- المشكل (طبق — صورة 2 وسط، الأسعار كيلو / ١/٢ / ١/٤) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">المشكل</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق ممبار</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٣٥٠ · ١/٢ — ١٨٠ · ١/٤ — ١٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق كفتة داوود باشا</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٤٥٠ · ١/٢ — ٢٣٠ · ١/٤ — ١٢٥</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق سجق بلدي</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٤٥٠ · ١/٢ — ٢٣٠ · ١/٤ — ١٢٥</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق سجق بلدي (طلب بالسجق)</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٤٥٠ · ١/٢ — ٢٣٠ · ١/٤ — ١٢٥</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق كبدة</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٤٥٠ · ١/٢ — ٢٣٠ · ١/٤ — ١٢٥</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق مشكل الملوك</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٦٠٠ · ١/٢ — ٣٠٠ · ١/٤ — ١٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق لحمة راس</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٦٠٠ · ١/٢ — ٣٥٠ · ١/٤ — ١٧٥</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طبق كبدة باللية</h4>
+          <p class="text-gray-400 text-sm mt-1">كيلو — ٥٠٠ · ١/٢ — ٢٥٠ · ١/٤ — ١٢٥</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ركن الفتة (كما بالصورة 2 أسفل اليمين) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">ركن الفتة</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">فتة سادة</h4>
+          <p class="text-gray-400 text-sm mt-1">٤٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">فتة باللحمة</h4>
+          <p class="text-gray-400 text-sm mt-1">٢٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">فتة كوارع</h4>
+          <p class="text-gray-400 text-sm mt-1">كبير — ٢٠٠ · وسط — ١٥٠</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- المشويات (كما بالصورة 1 أعلى يمين) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">المشويات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">فراخ مشوية</h4>
+          <p class="text-gray-400 text-sm mt-1">٩٠ · ١٨٠ · ٣٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">كفتة كندوز</h4>
+          <p class="text-gray-400 text-sm mt-1">١٢٥ · ٢٥٠ · ٤٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طرب</h4>
+          <p class="text-gray-400 text-sm mt-1">١٥٠ · ٣٠٠ · ٦٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">سيخ مشوي</h4>
+          <p class="text-gray-400 text-sm mt-1">١٢٥ · ٢٥٠ · ٤٥٠</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الوجبات (كما بالصورة 1 عمود اليمين) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">الوجبات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة ربع فرخة وراك</h4>
+          <p class="text-gray-400 text-sm mt-1">١٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة ربع فرخة صدر</h4>
+          <p class="text-gray-400 text-sm mt-1">١١٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة نصف فرخة</h4>
+          <p class="text-gray-400 text-sm mt-1">٢٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة كفتة</h4>
+          <p class="text-gray-400 text-sm mt-1">٨٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة ميكس</h4>
+          <p class="text-gray-400 text-sm mt-1">١٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">وجبة الملوك</h4>
+          <p class="text-gray-400 text-sm mt-1">٣٨٠</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الحواوشي (كما بالصورة 1) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">الحواوشي</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">حواوشي</h4>
+          <p class="text-gray-400 text-sm mt-1">٥٠ · ٧٠ · ١٠٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">حواوشي موزاريلا</h4>
+          <p class="text-gray-400 text-sm mt-1">٨٠ · ١٢٠</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الطواجن والشوربات (كما بالصورة 1 وسط) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">الطواجن / الشوربات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">شوربة كوارع محلية</h4>
+          <p class="text-gray-400 text-sm mt-1">١٢٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طاجن كوارع صلصة</h4>
+          <p class="text-gray-400 text-sm mt-1">١٥٠</p>
+        </div>
+
+        <div class="menu-card bg-brand-card rounded-xl p-6">
+          <h4 class="text-white font-bold text-base">طاجن لحمة بالبصل + أرز</h4>
+          <p class="text-gray-400 text-sm mt-1">١٧٠</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الإضافات (كما بالصورة 1 يسار) -->
+    <div class="mb-12">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">الإضافات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">شوربة كوارع سادة</h4><p class="text-gray-400 mt-1">٢٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">شوربة لحمة سادة</h4><p class="text-gray-400 mt-1">١٥</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">شوربة لسان عصفور</h4><p class="text-gray-400 mt-1">١٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">أرز سمتي</h4><p class="text-gray-400 mt-1">٤٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">أرز بالشعرية</h4><p class="text-gray-400 mt-1">٣٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">ملوخية</h4><p class="text-gray-400 mt-1">٢٥</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">خضار</h4><p class="text-gray-400 mt-1">٢٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">طحينة</h4><p class="text-gray-400 mt-1">١٠</p></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">سلطة</h4><p class="text-gray-400 mt-1">١٠</p></div>
+      </div>
+    </div>
+
+    <!-- المشروبات (كما بالصورة 1 أسفل يسار) -->
+    <div class="mb-8">
+      <div class="divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <h3 class="text-brand-red font-bold text-lg px-2">مشروبات</h3>
+        <div class="divider-dot"></div>
+        <div class="divider-line reverse"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- الصورة لم تذكر أسعار المشروبات بالتفصيل؛ أظهرت مشروبات فقط -->
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">سيرو سباتس</h4></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">كولا</h4></div>
+        <div class="menu-card bg-brand-card rounded-xl p-6"><h4 class="text-white font-bold text-base">ماء</h4></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -769,7 +667,7 @@
           </svg>
         </div>
         <p class="text-gray-400 text-xs font-semibold uppercase tracking-widest mb-2">تابعنا على فيسبوك</p>
-        <a href="https://www.facebook.com/share/1D5ByLAm5S/" target="_blank" rel="noopener noreferrer" class="text-white font-bold text-lg hover:text-brand-red-light">مشويات ومسمط الملوك</a>
+        <a href="https://www.facebook.com/search/top?q=%D9%85%D8%B4%D9%88%D9%8A%D8%A7%D8%AA%20%D9%88%D9%85%D8%B3%D9%85%D8%B7%20%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%83" target="_blank" rel="noopener noreferrer" class="text-white font-bold text-lg hover:text-brand-red-light">مشويات ومسمط الملوك</a>
         <p class="text-gray-600 text-xs mt-2">العروض، الصور وتحديثات الفرع</p>
       </div>
 
@@ -798,7 +696,7 @@
             </div>
             <div>
               <p class="text-white font-bold mb-1">الفرع الرئيسي — العبور</p>
-              <p class="text-gray-500 text-sm">الشباب سنتر الياسمين مبنى أ، العبور</p>
+              <p class="text-gray-500 text-sm">الشباب سنتر الياسمين مبنى أ، العبور، القاهرة</p>
               <a href="https://maps.app.goo.gl/hjhFMU2TF4kDNhHH8?g_st=aw" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 text-brand-red-light text-xs hover:underline">فتح في الخريطة ←</a>
             </div>
           </div>
@@ -823,7 +721,7 @@
     <div class="flex flex-wrap justify-center gap-4">
       <a href="tel:+201010118590" class="bg-white text-brand-red font-black px-8 py-3 rounded hover:bg-red-50 transition-colors">اتصل الآن</a>
       <a href="https://wa.me/201010118590" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white font-black px-8 py-3 rounded hover:bg-white hover:text-brand-red transition-colors">واتساب</a>
-      <a href="https://www.facebook.com/share/1D5ByLAm5S/" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white font-black px-6 py-3 rounded hover:bg-white hover:text-brand-red transition-colors">فيسبوك</a>
+      <a href="https://www.facebook.com/search/top?q=%D9%85%D8%B4%D9%88%D9%8A%D8%A7%D8%AA%20%D9%88%D9%85%D8%B3%D9%85%D8%B7%20%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%83" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white font-black px-6 py-3 rounded hover:bg-white hover:text-brand-red transition-colors">فيسبوك</a>
     </div>
   </div>
 </section>
@@ -853,7 +751,7 @@
         <h4 class="text-white font-bold mb-4 text-sm tracking-wide">الأرقام</h4>
         <ul class="space-y-2 text-sm">
           <li><a href="tel:+201010118590" class="text-gray-500 hover:text-brand-red-light transition-colors">01010118590 (رئيسي)</a></li>
-          <li><a href="https://www.facebook.com/share/1D5ByLAm5S/" class="text-gray-500 hover:text-brand-red-light transition-colors" target="_blank" rel="noopener noreferrer">صفحة فيسبوك</a></li>
+          <li><a href="https://www.facebook.com/search/top?q=%D9%85%D8%B4%D9%88%D9%8A%D8%A7%D8%AA%20%D9%88%D9%85%D8%B3%D9%85%D8%B7%20%D8%A7%D9%84%D9%85%D9%84%D9%88%D9%83" class="text-gray-500 hover:text-brand-red-light transition-colors">صفحة فيسبوك</a></li>
         </ul>
       </div>
     </div>
